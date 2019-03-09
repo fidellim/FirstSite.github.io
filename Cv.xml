@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Cv.xsl"?>
+<CV>
+    <firstName>Fidel</firstName>
+    <lastName>Lim</lastName>
+    <aboutMe>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+       standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+       type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem.
+    </aboutMe>
+    <photo>fidel.jpg</photo>
+    <role>Software Engineer</role>
+    <email>lim.fidel@gmail.com</email>
+    <website>www.lim-fidel.com</website>
+    <number>(+971)564603915</number>
+    <education>
+      <edu1>2001-2008 St. Therese School</edu1>
+      <edu2>2008-2010 Divine Light Academy Las Piñas</edu2>
+      <edu3>2010-2013 San Beda College Alabang</edu3>
+      <edu4>2014 Philippine-Emirates Private School</edu4>
+      <edu5>2014-2015 Australian School of Abu Dhabi</edu5>
+      <edu6>
+        <edu6-1>2015-2017 Abu Dhabi International Pvt. School</edu6-1>
+        <edu6-2>
+        Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s.
+      </edu6-2>
+      </edu6>
+      <edu7>
+        <edu7-1>2017-** Universty of Wollongong in Dubai</edu7-1>
+        <edu7-2>
+        Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s.
+      </edu7-2>
+      </edu7>
+    </education>
+    <experience>
+      <exp1>
+        <exp1-1>2015-2017 Microsoft Software Design Engineer</exp1-1>
+        <exp1-2>
+          Lorem Ipsum is simply dummy text of the printing
+          and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s.
+        </exp1-2>
+      </exp1>
+      <exp2>
+        <exp2-1>2017-** Google Software Design Engineer</exp2-1>
+        <exp2-2>
+          Lorem Ipsum is simply dummy text of the printing
+          and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s.
+        </exp2-2>
+      </exp2>
+    </experience>
+    <contact>
+      <address>Al Muhairy Center, Khalidiya Street, Abu Dhabi City</address>
+      <website>www.FidelLim.com</website>
+      <email>fel585@uowmail.edu.au</email>
+      <number>0564603915</number>
+    </contact>
+    <hobbiesList>
+      <hob1>Basketball</hob1>
+      <hob2>Volleyball</hob2>
+      <hob3>Basketball</hob3>
+    </hobbiesList>
+    <skillList>
+      <skill1>Java Developer</skill1>
+      <skill2>Black Hat Hacker</skill2>
+      <skill3>Web Designer</skill3>
+      <skill4>Photoshop</skill4>
+      <skill5>Lightroom</skill5>
+    </skillList>
+    <languageList>
+      <l>Tagalog</l>
+      <l1>Francais</l1>
+      <l2>English</l2>
+    </languageList>
+</CV>
