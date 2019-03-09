@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="contactRight">
+      <div id="commentSurvey">
+        <form onsubmit="validationforComment()">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email">
+          <span id="commentSection">Comment Section </span>
+          <br><br>
+          <textarea rows="6" cols="60" id="commentTextArea">
+          </textarea><br>
+          <button type="submit" id="commentButton" style="float:left;">Submit</button>
+        </form>
+        <button  id="commentButton" style="position:relative; left:10px;width:150px;" onclick="showData()">Show Comment/s</button>
+        <button  id="commentButton1" style="position:relative; left:10px;width:150px;" onclick="hideData()">Hide Comment/s</button>
+      </div>
+      <div id="contactUs">
+        <div id="insideContactUs">
+          <span style="font-size:30px; text-decoration:underline;  font-family: 'Playfair Display', serif;">Visit me </span><br>
+          <div style="margin-top:10px;">4043 Khalifa Street, #316</div>
+          Abu Dhabi, UAE 60613 <br>
+          <a href="https://www.google.com/maps/place/Al+Wahda+Mall/@24.4701327,54.3705691,17z/data=!3m1!4b1!4m5!3m4!1s0x3e5e663cb7c878dd:0x1a6b8b159dc2a52!8m2!3d24.4701327!4d54.3727578" target="_blank" style="text-decoration:none; color:red;">Map/Directions</a>
+          <div style="margin-left:57%;">Main: (+971) 56-846-4581 <br>
+          Support: (+971) 56-353-8314 </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contactRow2">
+    <div id="inputData">
+    </div>
+  </div>
+</div>
+
+  <script type = "text/javascript">
+
+  function hideData(){
+    document.getElementById('inputData').style.display = " none ";
+  }
+  //database for storing "comment section"
+  var db = openDatabase('Fideldb', '1.0', 'assignment DB', 2 * 1024 * 1024);
+
+  if(db != null){
+    db.transaction(
+      function (transaction) {
+        transaction.executeSql(
+          'CREATE TABLE IF NOT EXISTS assignment(id INTEGER PRIMARY KEY AUTOINCREMENT,'+
+          'email TEXT NOT NULL, comment TEXT NOT NULL);',
+          [],
+          function dataHandler(transaction, results){},
+          function errorHandler(transaction, error){
+            console.error("Error creating table: " + error.code + ": " + error.message);
+          }
+        );
+      }
+    );
+  }
+
+  function validationforComment(){
+    var exp = /^([A-Za-z0-9_\-\.]{1,12})+\@([A-Za-z0-9_\-\.]{2,12})+\.([A-Za-z]{2,4})$/
+    var email = document.getElementById('email').value;
+    if (!exp.test(email)) {
+      alert("Email is in wrong format");
+      return false;
+      email = null;
+    }else{
+      if (email.length > 30){
+        alert('Your email is 30 characters long');
+        return false;
+        email = null;
+      }else{
+      add();
+      alert('Thank you for your comment!');
+      return true;
+      }
+    }
+  }
+
+  function add(){
+    db.transaction (function (tx){
+      var email = document.getElementById('email').value;
+      var comment = document.getElementById('commentTextArea').value;
+      tx.executeSql ('insert into assignment(email, comment) values (?,?)',
+     [email, comment], showData())
+    })
+  }
+
+    //function for deleting data (but didn't use)
+    function showNewData(){
+      deleteData();
+      showData();
+    }
+    function deleteData(){
+      db.transaction(function (tx){
+        tx.executeSql('DELETE FROM assignment');
+      })
+    }
+
+
+    //retrieve DATA
+    function showData(){
+      document.getElementById('inputData').style.display = "block";
+      var html = " ";
+      db.transaction(function (table){
+        table.executeSql('SELECT * FROM assignment', [], function(table, results){
+          var len = results.rows.length, i;
+
+          for (i=0; i < len ; i++){
+            html += "<div style='float:left; border:1px; height:150px; width:260px;"
+            "background-color:#FFD197; margin-left:5px; margin-top:5px; margin-bottom:10px; border-radius:7px;'>";
+            html += "<div style='padding:5px'>";
+            html += "Email: " + results.rows.item(i).email;
+            html += "<br><br>";
+            html += "Comment: <br>&nbsp;&nbsp;&nbsp;" +  results.rows.item(i).comment;
+            html += "</div>";
+            html += "</div>";
+          }
+
+          document.getElementById('inputData').innerHTML = html;
+        }, null);
+      });
+    }
+  </script>
+  </body>
+</html>

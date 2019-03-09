@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>FidelLim</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
+    <script src="Assignment4.js"> </script>
+    <link rel="stylesheet" type="text/css" href="Assignment4.css">
+    <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="icon" href="browserIcon.ico">
+  </head>
+  <body id="Contact">
+    <div>
+      <nav>
+        <div class="logo"><a href="Assignment4-FidelLim.html" id="FidelLim" >FidelLim</a></div>
+          <ul>
+              <li><a href="Assignment4-Gallery.html" >Gallery</a></li>
+              <li><a href="Assignment4-About.html" >About</a></li>
+              <li><a href="Assignment4-News.html">News</a></li>
+              <li><a href="Assignment4-Contact.html" id="myContact">Contact</a></li>
+              <li><a href="Cv.xml">Curriculum Vitae</a></li>
+          </ul>
+      </nav>
+    </div>
+    <div id="contactWrapper">
+      <div id="contactRow1">
+        <div id="contactLeft">
+              <form onsubmit="addSurvey()">
+                <h1 style=" font-family: 'Playfair Display', serif;">Survey</h1>
+                <div id="surveyRow1">
+                  <div id="firstQuestion">
+                    <div>
+                      1. Rate my website <br><br>
+                      &nbsp;&nbsp;<input type="radio" id="r1" name="rate" value="poor"> Poor<br>
+                      &nbsp;&nbsp;<input type="radio" id="r2" name="rate" value="average"> Average<br>
+                      &nbsp;&nbsp;<input type="radio" id="r3" name="rate" value="excellent"> Excellent <br>
+                    </div>
+                  </div>
+                  <div id="secondQuestion">
+                    <div>
+                      2. Do you want to be a<br> &nbsp;&nbsp;&nbsp;&nbsp;Front-End Developer? <br>
+                      &nbsp;&nbsp;<input type="radio" id="fe1" name="front-end" value="yes">Yes<br>
+                      &nbsp;&nbsp;<input type="radio" id="fe2" name="front-end" value="no">No<br>
+                      &nbsp;&nbsp;<input type="radio" id="fe3" name="front-end" value="maybe">Maybe<br>
+                    </div>
+                  </div>
+                  <div id="thirdQuestion">
+                    <div>
+                      3. Do you want to be a<br> &nbsp;&nbsp;&nbsp; Back-End Developer <br>
+                      &nbsp;&nbsp;<input type="radio" id="be1" name="back-end" value="yes">Yes<br>
+                      &nbsp;&nbsp;<input type="radio" id="be2" name="back-end" value="no">No<br>
+                      &nbsp;&nbsp;<input type="radio" id="be3" name="back-end" value="maybe">Maybe<br>
+                    </div>
+                  </div>
+                </div>
+                <div id="surveyRow2">
+                  <div id="fourthQuestion">
+                    <div>
+                      4. Do you use JQuery?<br><br>
+                      &nbsp;&nbsp;<input type="radio" id="jq1" name="jq" value="yes">Yes<br>
+                      &nbsp;&nbsp;<input type="radio" id="jq2" name="jq" value="no">No<br>
+                      &nbsp;&nbsp;<input type="radio" id="jq3" name="jq" value="maybe">Maybe<br>
+                    </div>
+                  </div>
+                  <div id="fifthQuestion">
+                    <div>
+                      5. Do you use SQL? <br><br>
+                      &nbsp;&nbsp;<input type="radio" id="sq1" name="sql" value="yes">Yes<br>
+                      &nbsp;&nbsp;<input type="radio" id="sq2" name="sql" value="no">No<br>
+                      &nbsp;&nbsp;<input type="radio" id="sq3" name="sql" value="maybe">Maybe<br>
+                    </div>
+                  </div>
+                  <div id="sixthQuestion">
+                    <div>
+                      6. Is Web Development a<br>&nbsp;&nbsp;&nbsp; good career? <br>
+                      &nbsp;&nbsp;<input type="radio" id="gc1" name="career" value="Yes">Yes<br>
+                      &nbsp;&nbsp;<input type="radio" id="gc2" name="career" value="No">No<br>
+                      &nbsp;&nbsp;<input type="radio" id="gc3" name="career" value="Maybe">Maybe<br>
+                    </div>
+                  </div><br>
+                </div>
+                  <button type="submit" id="surveyButton">Submit</button>
+              </form>
+        </div>
+        <div id="contactRight">
+          <div id="commentSurvey">
+            <form onsubmit="validationforComment()">
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email">
+              <span id="commentSection">Comment Section </span>
+              <br><br>
+              <textarea rows="6" cols="60" id="commentTextArea">
+              </textarea><br>
+              <button type="submit" id="commentButton" style="float:left;">Submit</button>
+            </form>
+            <button  id="commentButton" style="position:relative; left:10px;width:150px;" onclick="showData()">Show Comment/s</button>
+            <button  id="commentButton1" style="position:relative; left:10px;width:150px;" onclick="hideData()">Hide Comment/s</button>
+          </div>
+          <div id="contactUs">
+            <div id="insideContactUs">
+              <span style="font-size:30px; text-decoration:underline;  font-family: 'Playfair Display', serif;">Visit me </span><br>
+              <div style="margin-top:10px;">4043 Khalifa Street, #316</div>
+              Abu Dhabi, UAE 60613 <br>
+              <a href="https://www.google.com/maps/place/Al+Wahda+Mall/@24.4701327,54.3705691,17z/data=!3m1!4b1!4m5!3m4!1s0x3e5e663cb7c878dd:0x1a6b8b159dc2a52!8m2!3d24.4701327!4d54.3727578" target="_blank" style="text-decoration:none; color:red;">Map/Directions</a>
+              <div style="margin-left:57%;">Main: (+971) 56-846-4581 <br>
+              Support: (+971) 56-353-8314 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="contactRow2">
+        <div id="inputData">
+        </div>
+      </div>
+    </div>
+
+    <script type = "text/javascript">
+
+    function hideData(){
+      document.getElementById('inputData').style.display = " none ";
+    }
+    //database for storing "comment section"
+    var db = openDatabase('Fideldb', '1.0', 'ssignment DB', 2 * 1024 * 1024);
+
+    if(db != null){
+      db.transaction(
+        function (transaction) {
+          transaction.executeSql(
+            'CREATE TABLE IF NOT EXISTS assignment(id INTEGER PRIMARY KEY AUTOINCREMENT,' +
+            'email TEXT NOT NULL, comment TEXT NOT NULL);',
+            [],
+            function dataHandler(transaction, results){},
+            function errorHandler(transaction, error){
+              console.error("Error creating table: " + error.code + ": " + error.message);
+            }
+          );
+        }
+      );
+    }
+
+    function validationforComment(){
+      var exp = /^([A-Za-z0-9_\-\.]{1,12})+\@([A-Za-z0-9_\-\.]{2,12})+\.([A-Za-z]{2,4})$/
+      var email = document.getElementById('email').value;
+      if (!exp.test(email)) {
+        alert("Email is in wrong format");
+        return false;
+        email = null;
+      }else{
+        if (email.length > 30){
+          alert('Your email is 30 characters long');
+          return false;
+          email = null;
+        }else{
+        add();
+        alert('Thank you for your comment!');
+        return true;
+        }
+      }
+    }
+
+    function add(){
+      db.transaction (function (tx){
+        var email = document.getElementById('email').value;
+        var comment = document.getElementById('commentTextArea').value;
+        tx.executeSql ('insert into assignment(email, comment) values (?,?)',
+       [email, comment], showData())
+      })
+    }
+
+      //function for deleting data (but didn't use)
+      function showNewData(){
+        deleteData();
+        showData();
+      }
+      function deleteData(){
+        db.transaction(function (tx){
+          tx.executeSql('DELETE FROM assignment');
+        })
+      }
+
+
+      //retrieve DATA
+      function showData(){
+        document.getElementById('inputData').style.display = "block";
+        var html = " ";
+        db.transaction(function (table){
+          table.executeSql('SELECT * FROM assignment', [], function(table, results){
+            var len = results.rows.length, i;
+
+            for (i=0; i < len ; i++){
+              html += "<div style='float:left; border:1px; height:150px; width:260px;" +
+              "background-color:#FFD197; margin-left:5px; margin-top:5px; margin-bottom:10px; border-radius:7px;'>";
+              html += "<div style='padding:5px'>";
+              html += "Email: " + results.rows.item(i).email;
+              html += "<br><br>";
+              html += "Comment: <br>&nbsp;&nbsp;&nbsp;" +  results.rows.item(i).comment;
+              html += "</div>";
+              html += "</div>";
+            }
+
+            document.getElementById('inputData').innerHTML = html;
+          }, null);
+        });
+      }
+
+      //database  for six-question survey
+      var myDb = openDatabase('Fideldb', '1.0', 'survery DB', 2 * 1024 * 1024);
+
+
+        if(myDb != null){
+          myDb.transaction(
+            function (transaction) {
+              transaction.executeSql(
+                'CREATE TABLE IF NOT EXISTS survey(id INTEGER PRIMARY KEY AUTOINCREMENT,' +
+                'rateOfWeb TEXT NOT NULL, frontEnd TEXT, backEnd TEXT NOT NULL,'+
+                'useJQuery TEXT NOT NULL, useSQL TEXT NOT NULL, goodCareer TEXT NOT NULL);',
+                [],
+                function dataHandler(transaction, results){},
+                function errorHandler(transaction, error){
+                  console.error("Error creating table: " + error.code + ": " + error.message);
+                }
+              );
+            }
+          );
+        }
+
+      function addSurvey(){
+        myDb.transaction (
+          function (tx) {
+            var rateOfWeb = " ";
+            var frontEnd = "  ";
+            var backEnd= " ";
+            var useJQuery= " ";
+            var useSQL = " ";
+            var goodCareer = " ";
+
+            //first question
+            if (document.getElementById('r1').checked) {
+              rateOfWeb = document.getElementById('r1').value;
+            }else if (document.getElementById('r2').checked) {
+              rateOfWeb = document.getElementById('r2').value;
+            }else if (document.getElementById('r3').checked) {
+              rateOfWeb = document.getElementById('r3').value;
+            }
+
+            //second question
+            if (document.getElementById('fe1').checked) {
+              frontEnd  = document.getElementById('fe1').value;
+            }else if (document.getElementById('fe2').checked) {
+              frontEnd  = document.getElementById('fe2').value;
+            }else if (document.getElementById('fe3').checked) {
+              frontEnd  = document.getElementById('fe3').value;
+            }
+
+            //third question
+            if (document.getElementById('be1').checked) {
+              backEnd = document.getElementById('be1').value;
+            }else if (document.getElementById('be2').checked) {
+              backEnd = document.getElementById('be2').value;
+            }else if (document.getElementById('be3').checked) {
+              backEnd = document.getElementById('be3').value;
+            }
+
+            //fourth question
+            if (document.getElementById('jq1').checked) {
+              useJQuery = document.getElementById('jq1').value;
+            }else if (document.getElementById('jq2').checked) {
+              useJQuery = document.getElementById('jq2').value;
+            }else if (document.getElementById('jq3').checked) {
+              useJQuery = document.getElementById('jq3').value;
+            }
+
+            //fifth question
+            if (document.getElementById('sq1').checked) {
+              useSQL = document.getElementById('sq1').value;
+            }else if (document.getElementById('sq2').checked) {
+              useSQL = document.getElementById('sq2').value;
+            }else if (document.getElementById('sq3').checked) {
+              useSQL = document.getElementById('sq3').value;
+            }
+
+            //sixth question
+            if (document.getElementById('gc1').checked) {
+              goodCareer = document.getElementById('gc1').value;
+            }else if (document.getElementById('gc2').checked) {
+              goodCareer = document.getElementById('gc2').value;
+            }else if (document.getElementById('gc3').checked) {
+              goodCareer = document.getElementById('gc3').value;
+            }
+            tx.executeSql (
+              'insert into survey(rateOfWeb, frontEnd, backEnd, useJQuery, useSQL, ' +
+              'goodCareer) values (?,?,?,?,?,?)', [rateOfWeb, +
+              frontEnd, backEnd, useJQuery, useSQL, goodCareer],
+            )
+          }
+        )
+      }
+    </script>
+  </body>
+</html>
